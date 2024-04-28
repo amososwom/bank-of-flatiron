@@ -9,13 +9,13 @@ function TableTransaction({records}) {
   const [searchValue, setSearch] = useState("");
 
     const rows = [];
-      stateRecords.forEach((data) => {
+      stateRecords.forEach((data, index) => {
        if(data.description.toLowerCase().indexOf(searchValue.toLowerCase()) === -1) {
         return;
        } 
 
       rows.push( < TransactionRow 
-          key={data.id}
+          key={index}
             date={data.date} 
             description={data.description}
             category={data.category}
