@@ -1,6 +1,6 @@
-let var1 = "Bosco";
+let vars = "Bosco";
 
-var1.filter(value => {
-    
-})
-console.log(result)
+// vars.filter(values => {
+    vars = vars.includes("")
+// })
+console.log(vars)

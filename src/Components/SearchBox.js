@@ -1,17 +1,8 @@
 import React from 'react'
-import { useState } from 'react';
-
-function SearchBox({instateRecords, funcSetData}) {
-    const [searchValue, setSearch] = useState("")
+function SearchBox({searchValue, funcSetSearch}) {
 
 function handleSearch(e){
-    setSearch(e.target.value)
-
-    const filteredRecords = instateRecords.filter(indata => 
-        indata.description.toLowerCase().includes(searchValue.toLowerCase())
-    );
-    
-    funcSetData(filteredRecords);
+    funcSetSearch(e.target.value)
 }
 
     return (<>

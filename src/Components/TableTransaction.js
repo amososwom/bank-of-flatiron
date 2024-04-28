@@ -6,17 +6,25 @@ import SearchBox from './SearchBox';
 
 function TableTransaction({records}) {
   const [stateRecords, setStateRecords] = useState(records);
-    const rows = stateRecords.map(data => (
-       < TransactionRow 
+  const [searchValue, setSearch] = useState("");
+
+    const rows = [];
+      stateRecords.forEach((data) => {
+       if(data.description.toLowerCase().indexOf(searchValue.toLowerCase()) === -1) {
+        return;
+       } 
+
+      rows.push( < TransactionRow 
           key={data.id}
             date={data.date} 
             description={data.description}
             category={data.category}
             amount={data.amount}
             />
-    ))
+      )
+})
     return (<>
-      <SearchBox instateRecords={stateRecords} funcSetData={setStateRecords} />
+      <SearchBox searchValue={searchValue} funcSetSearch={setSearch} />
       <AddTransaction funcSetData={setStateRecords} />
         <table>
           <thead>
