@@ -11,7 +11,6 @@ function AddTransaction({funcSetData }) {
   function handleSubmit(e){
     e.preventDefault();
     let newTransaction = {
-      id: Math.floor(Math.random() * 200),
       date: indate,
       description: indescription,
       category: incategory,
