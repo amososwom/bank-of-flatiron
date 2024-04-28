@@ -10,6 +10,7 @@ function handleSearch(e){
     const filteredRecords = instateRecords.filter(indata => 
         indata.description.toLowerCase().includes(searchValue.toLowerCase())
     );
+    
     funcSetData(filteredRecords);
 }
 
