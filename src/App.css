@@ -39,7 +39,7 @@
   box-shadow: 0 1px 7px  0 rgba(0, 0, 0, 0.3);
   border-radius: 7px;
 }
-.Transaction form {
+.Transaction form div {
   width: 100%;
   display: flex;
   padding: 0.9em;

@@ -5,15 +5,21 @@ import AddTransaction from './AddTransaction';
 import SearchBox from './SearchBox';
 
 function TableTransaction({records}) {
-  const [stateRecords, setStateRecords] = useState(records);
+  // the below usestate holds the records in a variabke alled stateRcords
+  const [stateRecords, setStateRecords] = useState(records); 
+  // the below usestate holds the search value
   const [searchValue, setSearch] = useState("");
 
+  //  initiated an empty array
     const rows = [];
+    // looped throu the stat  that held the records
       stateRecords.forEach((data, index) => {
+        // if the search value is not in the description of the record, return
+ 
        if(data.description.toLowerCase().indexOf(searchValue.toLowerCase()) === -1) {
         return;
        } 
-
+      //   by default pushed the componet to the  top new array 
       rows.push( < TransactionRow 
           key={index}
             date={data.date} 
@@ -24,6 +30,7 @@ function TableTransaction({records}) {
       )
 })
     return (<>
+    {/* the search box and the add transaction component */}
       <SearchBox searchValue={searchValue} funcSetSearch={setSearch} />
       <AddTransaction funcSetData={setStateRecords} />
         <table>
