@@ -6,6 +6,8 @@
 
 ## Description
  * this is a project for taking in transaction and also can be filtered through transaction
+### DEPLOYED-LINK
+    * Open [https://boogiecoin.org](https://boogiecoin.org) to view it in your browser.
 ## How to Use
  * Hello for you to use/access youll pass some couple of requirments below, then continue with this instruction here:
 youll need to run the `npm start` 
